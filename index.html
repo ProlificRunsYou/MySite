@@ -1,37 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <title>Your Gay.</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-
 <body>
-
-  <div class="row">
-    <div class="column side">
-      <h2>Projects</h2>
-      <p>+===========+</p>
-      <a href="projects/binary.html">Binary Calculator</a>
-      <a href="projects/hi.html">NyaWare</a>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
     </div>
-
-    <div class="column middle">
-      <h2>Who am i?</h2>
-      <p>I am 17 years old and im a programmer enthusiast ! You can see my projcts on the left hand side!</p>
-      <p>I use C/C++/ASM/Python/BASH and I have been prgramming for a good 4 years now :)</p>
-    </div>
-
-    <div class="column side">
-      <h2>Socials</h2>
-      <p>Discord: 2983u2</p>
-      <p>Github: ProlificRunsYou</p>
-      <p>Steam: REDACTED</p>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="projects/index.html">Projects</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="misc/resource/contact.html"><span class="glyphicon glyphicon-log-in"></span> contact</a></li>
+      </ul>
     </div>
   </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href"https://github.com/ProlificRunsYou">Github</a></p>
+
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h1>Who am i?</h1>
+      <p>
+        I am 17 years old and im a programmer enthusiast ! You can see my projcts on the nav bar ontop! I have been prgramming for a good 4 years now :)</p>
+      <hr>
+      <h3>Lanuages?</h3>
+      <p>I use C/C++/ASM/Python/BASH</p>
+      <h3>How do I pay?</h3>
+      <p>Cashapp Only: $knxrstore or you can dm me on discord 2983u2</p>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="row content">    
+  <div class="col-sm-2 sidenav">
+    <div class="well">
+      <div class="panel panel-primary">
+        <div class="panel-heading"></div>
+        <div class="panel-body"><img src="misc/resource/discord.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-footer">$5 Discord bot hosting (24-7)(Monthly)</div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+
 
 </body>
-
 </html>
