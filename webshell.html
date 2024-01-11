@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="src/script.js"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+  //initialize the SDK with your API Key
+  wsh.initialize('YOUR_APIKEY');
+
+  //Execute a request to display a Google Maps
+  wsh.exec({
+    code: function() {
+      var m = apis.google.maps({height: '100%'});
+      m.center('paris');
+      m.zoom(18);
+    },
+    process: function(json, meta) {
+      $('body').append(meta.view);
+    }
+  })
+})
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
