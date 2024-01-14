@@ -1,0 +1,8 @@
+.fixedtop-padding {
+  body {
+    padding-top: 56px;
+  }
+  html {
+    scroll-padding-top: 61px;
+  }
+}
