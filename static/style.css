@@ -56,6 +56,10 @@
   white-space: normal !important;
 }
 
+.dropdown-item {
+	    border-radius: var(--bs-border-radius-sm);
+}
+
 .dropdown-menu li+li {
     margin-top: 0.125rem;
 }
@@ -63,6 +67,7 @@
 .dropdown-menu {
   -webkit-animation-name: pageslideIn;
   animation-name: pageslideIn;
+  padding: var(--bs-border-radius-sm);
 }
 
 .navbar .dropdown-menu {
