@@ -3,6 +3,6 @@
     padding-top: 56px;
   }
   html & {
-    scroll-padding-top: 61px;
+    scroll-padding-top: calc(56px + .5rem);
   }
 }
