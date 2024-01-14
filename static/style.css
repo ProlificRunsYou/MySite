@@ -1,8 +1,7 @@
-.fixedtop-padding {
-  body & {
-    padding-top: 56px;
-  }
-  html & {
-    scroll-padding-top: calc(56px + .5rem);
-  }
+body.fixedtop-padding {
+  padding-top: 56px;
+}
+
+html.fixedtop-padding {
+  scroll-padding-top: calc(56px + .5rem);
 }
