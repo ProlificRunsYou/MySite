@@ -186,3 +186,17 @@
   -webkit-animation-name: slideIn;
   animation-name: slideIn;
 }
+
+@media (min-width: 767.98px) {
+  .procard {
+    margin-left: auto;
+    margin-right: auto;
+    width: 18rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .card-width {
+    width: 100%;
+  }
+}
